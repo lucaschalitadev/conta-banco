@@ -55,15 +55,15 @@ public class Conta01 {
 		System.out.println("Tipo: " + this.getTipoConta());
 		System.out.println("Saldo: " + this.getSaldoConta());
 	}
-	public void abrirConta(String t) {
+	public void abrirConta(String d, String t, double s) {
+		this.setDonoConta(d);
 		this.setTipoConta(t);
+		this.setSaldoConta(s);
 		this.setStatusConta(true);
 		if (t == "CC") {
-			this.setSaldoConta(50.00);
+			this.setSaldoConta(this.getSaldoConta() + 50);
 		} else if (t == "CP"){
-			this.setSaldoConta(150.00);
-		} else {
-			System.out.print("TIPO DE CONTA INVÁLIDO");
+			this.setSaldoConta(this.getSaldoConta() + 150);
 		}
 		System.out.println("CONTA ABERTA COM SUCESSO!");
 	}
